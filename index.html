@@ -30,10 +30,39 @@
         web3.eth.defaultAccount = web3.eth.accounts[0];
 
         // Get the contract address
-        var RemixContract = web3.eth.contract(CONTRACT-ABI-HERE);
+        var RemixContract = web3.eth.contract([
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "x",
+				"type": "string"
+			}
+		],
+		"name": "setMessage",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getMessage",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]);
 
         // Get the contract abi
-        var myMessage = RemixContract.at('CONTRACT ADDRESS HERE');
+        var myMessage = RemixContract.at('0x19ffde60d69bd79609503a4c3d23b671a9bebf9c');
 
         console.log(myMessage);
 
