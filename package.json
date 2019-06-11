@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "ethereumjs-tx": "^2.0.0",
     "web3": "^1.0.0-beta.55"
   },
   "devDependencies": {},
